@@ -205,3 +205,39 @@ console.log(typeof values);
 
 // OBJECTS:
 console.log('Data: Objects');
+
+const prod1 = {};
+prod1.name = 'Cool Phone'; // what we're saying here is that we have an object (empty) the attribute/identifier is "name" and the value is "Cool Phone"
+prod1.price = 4998.9; 
+prod1['Big Discount'] = 0.4; // avoid using attributes with spaces in the name, this is just to exemplify we can do it.
+prod1.bigDiscount2 = 0.4; // different ways of attributing key names
+
+console.log(prod1);
+
+const prod2 = {
+    name: 'Polo Shirt',
+    price: 79.9,
+}
+
+console.log(prod2);
+
+const prod3 = {
+    name: 'Polo Shirt',
+    price: 79.9,
+    prod4: {
+        name: 'a',
+        prod4: {
+            name: 'b'}}}
+prod3.discount = 0.6;
+
+console.log(prod3);
+
+console.log('--//--');
+
+// Json:
+const prod4 = '{ "name": "Polo Shirt", "price": 79.9}';
+console.log(prod4);
+
+ 
+
+
