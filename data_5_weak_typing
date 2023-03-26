@@ -1,0 +1,7 @@
+ let something = 'Cool';
+ console.log(something);
+ console.log(typeof something);
+
+ something = 4.56;
+ console.log(something);
+ console.log(typeof something);
