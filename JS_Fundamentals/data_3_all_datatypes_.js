@@ -238,6 +238,54 @@ console.log('--//--');
 const prod4 = '{ "name": "Polo Shirt", "price": 79.9}';
 console.log(prod4);
 
- 
+// NULL & UNDIFINED:
+console.log('Data: Null & Undefined'); 
 
+// Reference vs Value copies
+/* Reference first: this is when we are working with objects mostly.
+* what happened here is that, when we are working with objects, what's stored in obj1 is not the value attributed but a path or 'address'
+* this means that by setting obj2 = obj1, they will lead to the same place, even tho both are set as constants. The result is that by changing b, 
+* we change a as well, as now the address is pointing to the same object.
+*/
+const obj1 = {name: 'a'};
+console.log(obj1);
 
+const obj2 = obj1;
+obj2.name = 'b';
+console.log(obj1); 
+console.log(obj2); 
+
+/* Value copies.
+* The same doesn't happened with primitive data types such as numbers or strings, as these will be stored as a value. Here, even tho we equalled obj4 to obj3, we
+* can't change the value of obj3 by doing so.
+*/
+
+let obj3 = 3;
+console.log(obj3);
+
+let obj4 = obj3;
+obj4 = obj3 + 1;
+console.log(obj3);
+console.log(obj4); 
+
+let variablex // not attributing any value
+console.log(variablex); // the result is undefined, the variable is not inicialized to start
+// console.log(variabley); // there's a difference between undefined (created but not inicialized) and not defined (not even created)
+
+variablex = null // this means absence of value, it's not pointing to any value or address/path - but the variable is still attributed
+console.log(variablex); 
+// console.log(variablex.toString()); //problems will null's 
+
+const prodx = {};
+console.log(prodx.price); // we can have variables in null objects, they will be undefined tho (until we define them xD)
+
+prodx.price = 3.5;
+console.log(prodx);
+
+prodx.price = undefined; // we usually don't do this, we would put either 0 (best option) or even null - does not make sense but the code still works
+console.log(prodx);
+
+// if we want to delete the attribute, we can do a 'delete prodx.price;' command
+
+prodx.price = null;
+console.log(prodx);
