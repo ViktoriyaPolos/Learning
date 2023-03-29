@@ -288,4 +288,4 @@ console.log(prodx);
 // if we want to delete the attribute, we can do a 'delete prodx.price;' command
 
 prodx.price = null;
-console.log(prodx);
+console.log(prodx); 
