@@ -20,6 +20,7 @@ for (let j = 0; j < 10; j++){
 console.log('Example 2');
 
 // VAR
+// because var doesn't have a scope, it will print a 10 (in this case) for every index in the array 
 const funcs = [] // empty array
 
 for (var m = 0; m < 10; m++) {
@@ -30,4 +31,18 @@ for (var m = 0; m < 10; m++) {
 funcs[2] ();
 funcs[8] ();
 
+console.log('---//---');
+
+// LET
+// because var doesn't have a scope, it will print a 10 (in this case) for every index in the array 
+const funcs2 = [] // empty array
+
+for (let n = 0; n < 10; n++) {
+    funcs2.push(function() {
+        console.log(n)
+    })
+};
+funcs2[2]();
+funcs2[8]();
+ 
 
