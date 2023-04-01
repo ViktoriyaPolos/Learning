@@ -5,8 +5,7 @@ const greeting = 'Hello'; // lexical context (physical place where the variable 
 console.log(greeting);
 
 // here the key is greeting and the value is Hello. If we try to define it again: 
-
-const greeting = 'Hi';
+// const greeting = 'Hi'; will give an error, it's already defined in this lexical context
  
 // Example 2:
 function exec() {
