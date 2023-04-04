@@ -164,3 +164,66 @@ console.log('13)', undefined === null);
 console.log('----- Logical operators -----');
 
 // it's the and/ or type of operators
+
+/* Set-up for this exercise is: 
+We're working 2 jobs, if for this week both go well, we get a 50inch tv and ice-cream. If only one of them goes well, we get a smaller, 32inch tv and still get the 
+icre-cream. If neither goes well, we don't get a tv nor the ice-cream.
+*/
+
+function shopping(work1, work2) {
+    const buyIceCream = work1 || work2 // here if work1 goes well, we don't need to even look at work2
+    const buyTv50 = work1 && work2 // here it's a "short-circut" operator - if the first is false, we don't need to look at the 2nd to know the whole thing is false
+    // const buyTv32 = !! (work1 ^ work2) this is a bitwise xor (exclusive or operator) - WTF?
+    const buyTv32 = work1 != work2 // instead of doing the way above, we can have an exclusive or in this way (see hand notes on page 7.5 if needed)
+    const keepHealthy = !buyIceCream // logical denial (unary operator)
+
+    return {buyIceCream, buyTv50, buyTv32, keepHealthy} // here, we are creating an object, note on this below
+};
+
+/* in the new update in JS, we can have objects without havint to explicitly have the key/value. So instead of this:
+return {buyIceCream: buyIceCream, 
+    buyTv50: buyTv50, 
+    buyTv32: buyTv32, 
+    keepHealthy: keepHealthy}
+We can simplify and have just this: return {buyIceCream, buyTv50, buyTv32, keepHealthy}. 
+This will assume these as the keys, as as the value, the result of the operation defined in the constants above. But "behinf the scenes", we still have the 
+key/value going on.
+*/
+
+console.log('1)', shopping(true, true));
+console.log('2)', shopping(true, false));
+console.log('3)', shopping(false, true));
+console.log('4)', shopping(false, false));
+
+
+
+
+// 'Unary' operators
+console.log('----- "Unary" operators -----');
+let num1 = 1;
+let num2 = 2;
+
+num1++ 
+console.log(num1);
+--num1
+console.log(num1);
+
+console.log(++num1 === num2--); /* this is true because... it follows an order - meaning, first we did +1 to num1 (=2), then we compared to num2 (2) - which is indeed 
+true. Only after the comparison, we subctracted 1 to 2 (1) */
+console.log(num1 === num2); // if we compare them again, we will see they are not equal anymore
+console.log(num1);
+console.log(num2);
+
+
+
+
+// 'Ternary' operators
+console.log('----- "Ternary" operators -----');
+
+const result = grade => grade >= 7 ? 'Approved' : 'Failed' // here we are using an arrow function
+
+console.log(result(7.1));
+console.log(result(6.1));
+
+// const status = grade >= 7 ? 'Approved' : 'Failed' // this is an error, because grade is not defined just to show that we can store this as an constant as well
+
