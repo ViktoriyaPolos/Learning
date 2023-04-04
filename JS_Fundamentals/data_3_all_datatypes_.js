@@ -1,5 +1,5 @@
 // General Overview (detail on each below):
-console.log('General Overview:');
+console.log('----- General Overview: ----- ');
 let age=31;
 console.log(typeof 31);
 console.log(typeof age);
@@ -13,11 +13,14 @@ console.log(typeof isItRainig);
 console.log(typeof 'Test whaterver #')
 console.log(typeof -5089765)
 
-// there's more data types, but these are the most basic and common one's - we'll see some others later on 
+// there's more data types, but these are the most basic and common one's - we'll see some others later on.
+
+
+
 
 
 // NUMBERS:
-console.log('Data: Numbers');
+console.log('----- Data: Numbers ----- ');
 
 const weight1 = 1.0;
 const weight2 = Number('2.0');
@@ -65,8 +68,12 @@ console.log(area2);
 
 console.log(typeof Math);
 
+
+
+
+
 // STRINGS:
-console.log('Data: Strings');
+console.log('----- Data: Strings ----- ');
 
  const school = 'Coder';
  console.log(school.charAt(4));
@@ -110,8 +117,12 @@ console.log(`1 + 1 = ${1 + 1}`);
 const up = text => text.toUpperCase()
 console.log(`Hey...${up('careful')}!`);
 
+
+
+
+
 // BOOLEAN: 
-console.log('Data: Boolean');
+console.log('----- Data: Boolean ----- ');
 
 let isActive = false;
 console.log(isActive);
@@ -177,8 +188,11 @@ let name3 = 'Lucas';
 console.log(name3 || 'Unknown');
 
 
+
+
+
 // ARRAYS:
-console.log('Data: Array');
+console.log('----- Data: Array ----- ');
 
 const values = [7.7, 8.9, 6.3, 9.2];
 console.log(values[0],values[3]);
@@ -203,8 +217,12 @@ console.log(values);
 
 console.log(typeof values);
 
+
+
+
+
 // OBJECTS:
-console.log('Data: Objects');
+console.log('----- Data: Objects ----- ');
 
 const prod1 = {};
 prod1.name = 'Cool Phone'; // what we're saying here is that we have an object (empty) the attribute/identifier is "name" and the value is "Cool Phone"
@@ -238,8 +256,12 @@ console.log('--//--');
 const prod4 = '{ "name": "Polo Shirt", "price": 79.9}';
 console.log(prod4);
 
+
+
+
+
 // NULL & UNDIFINED:
-console.log('Data: Null & Undefined'); 
+console.log('----- Data: Null & Undefined ----- '); 
 
 // Reference vs Value copies
 /* Reference first: this is when we are working with objects mostly.

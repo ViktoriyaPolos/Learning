@@ -1,5 +1,5 @@
 // Attribution operator 
-console.log('Attribution operator');
+console.log('----- Attribution operator-----');
 const a = 7;
 let b = 3; 
 console.log(a);
@@ -20,8 +20,13 @@ console.log(b);
 b %= 2 ; // modulos ( didn't quite get it)
 console.log(b);
 
+
+
+
+
+
 // Destructuring operator (taking something from a structure)
-console.log('Destructuring operator');
+console.log('----- Destructuring operator ----- ');
 
 // Example 1 - Objects: 
 const person = {
@@ -49,5 +54,113 @@ console.log(street, number, zipCode);
 // const {account: {accNumber, code}} = person; // here we will have an error right away. We need to make sure we have the path we're trying to deconstruct 
 
 // Example 2 - Arrays: 
-const [a1] = [10]; 
-console.log(a1);
+const [a1] = [10]; // reminder, here we are defining a variable (constant in this case) a1, that recieves the value 10
+console.log(a1); 
+
+const [n1, , n3, ,n5, n6 = 0] = [10, 7, 9, 8]; // another reminder, here n6 has the value of 0 by default (if not attributed another value, will return 0)
+console.log(n1, n3, n5, n6);
+
+const [, [, note]] = [[, 8, 8], [9, 6, 8]]; // we shouldn't do this as this type of code is hard to read
+console.log(note);
+
+// Example 3: 
+function rand({min = 0, max = 1000}) { // here we are using the destructuring operator
+    const value = Math.random()* (max-min) + min
+    return Math.floor(value)
+};
+console.log(rand({max: 50, min: 40})); // here we are using an object, it's the same as doing the object first (see below): 
+const obj = {max: 50, min: 40} // 1/2
+console.log(rand(obj)); // 2/2
+console.log(rand({min: 955})); // here, we only defined the min, the max is the same as set in the function before, 1000
+console.log(rand({})); // here, it will give any number between 0-1000
+// console.log(rand()); this will give an error because it will try to destructure something that is undefined or null - will lead to an error
+
+// Another example to understand the difference of destructuring in this function case:
+// Option without destructuting: 
+function apresentar(nome, idade) {
+    console.log('Olá, me chamo ' + nome + ' e tenho '+ idade + ' anos');
+}
+
+const pessoa = {
+    nome: 'Fulano',
+    idade: '22',
+    sexo: 'M',
+    profissao: 'Dev',
+}
+ 
+apresentar(pessoa.nome, pessoa.idade)
+
+// Option with destructuring: 
+function apresentar1({nome, idade}) {
+    console.log('Olá, me chamo ' + nome + ' e tenho '+ idade + ' anos');
+}
+ 
+const pessoa1 = {
+    nome: 'Fulano',
+    idade: '22',
+    sexo: 'M',
+    profissao: 'Dev',
+}
+ 
+apresentar1(pessoa1)
+
+// Example 4 (same as 3 but with array):
+function rand1([min1 = 0, max1 = 1000]) {
+    if (min1 > max1) [min1, max1] = [max1, min1] 
+    const value = Math.random()* (max1-min1) + min1
+    return Math.floor(value)
+};
+console.log(rand1([50, 40])); // here the first number will be the min and the second the max (by default, don't need to assign as in the example with objects - ex.3)
+console.log(rand1([950])); // here we are defining only the min (so will go from 950-1000)
+console.log(rand1([, 40])); // here we are defining only the max (so the range is 0-40)
+console.log(rand1([]));
+
+
+
+
+// Arithmetic operators
+console.log('----- Arithmetic operators ----- ');
+
+const [e, f, g, h] = [3, 5, 1, 15]; // here we are using the destructutring method
+const sum = e + f + g + h // binary because it will do e+f then this sum + g and then all this added up + h
+const subtract =  f - h
+const multiply = e * f
+const divide = h / e
+const module1 = e % 2 // %2 is ususally used to know if a number is even (if 0 then yes, it's even)
+
+console.log(sum, subtract, multiply, divide, module1);
+console.log(-subtract); // this is an example of a 'unary' operator
+
+
+
+
+// Relational operators
+console.log('----- Relational operators -----');
+// these will always be true or false - we are comparing 2 things (also, it's binary)
+
+console.log('01)', '1' == 1); // here we are comparing the value, not the data type
+console.log('02)', '1' === 1); // here we're both comparing the value and the data type, which in this case is not the same
+console.log('03)', '3' != 3); 
+console.log('04)', '3' !== 3); 
+console.log('05)', 3 < 2); 
+console.log('06)', 3 > 2); 
+console.log('07)', 3 <= 2); 
+console.log('08)', 3 >= 2); 
+
+const d1 = new Date(0) // 0 is the reference date 
+const d2 = new Date(0)
+console.log('09)', d1 === d2); // here it's always different because it's comparing the memory references, which is different for each
+console.log('10)', d1 == d2); 
+console.log('11)', d1.getTime() == d2.getTime()); // here it will be true because we're comparing the actual time (both == and ===)
+console.log('12)', undefined == null); 
+console.log('13)', undefined === null); 
+
+// Usually it's better to use the strictly equal (===)
+
+
+
+
+// Logical operators
+console.log('----- Logical operators -----');
+
+// it's the and/ or type of operators
