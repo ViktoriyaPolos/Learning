@@ -226,5 +226,3 @@ console.log(result(7.1));
 console.log(result(6.1));
 
 // const status = grade >= 7 ? 'Approved' : 'Failed' // this is an error, because grade is not defined just to show that we can store this as an constant as well
-
-...

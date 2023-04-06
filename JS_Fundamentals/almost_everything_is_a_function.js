@@ -1,4 +1,6 @@
 // If JS was a country - function would be the president
+// here is a link for more info on functions, with very simple and clear examples: https://blog.cod3r.com.br/funcoes-com-e-sem-retorno/
+
 
 console.log(typeof Object);
 
@@ -50,4 +52,6 @@ console.log(sum3(4,3));
 const print1 = a => console.log(a);
 print1(1);
 print1('Cool');
+
+
 
