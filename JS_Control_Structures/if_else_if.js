@@ -24,3 +24,6 @@ printResult(6.55);
 printResult(2.3);
 printResult(-1);
 printResult(11);
+
+
+// link on the this part of the function to refresh: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/this 
