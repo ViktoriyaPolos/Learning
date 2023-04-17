@@ -16,3 +16,17 @@ while (x <=10) {
 for (var i = 1; i <=10; i++) {
     console.log(`i = ${i}`)
 };
+
+// so this is like the while, but compressed
+
+const grades = [6.7, 7.4, 9.8, 8.1, 7.7]
+for( i = 0; i < grades.length; i++) { // add the let (see below)
+    console.log(`grades = ${grades[i]}`)
+};
+
+console.log(i); // doesn't mean much, so we should use a let when defining the variable in the FOR statement like so: for(let i = 0; ...)
+
+const grades2 = [6.7, 7.4, 9.8, 8.1, 7.7]
+for(let i = 3; i < grades2.length; i++) { // added the let and was testing what happens if we change the start index - indeed it starts at that index :) 
+    console.log(`grades2 = ${grades2[i]}`)
+};
