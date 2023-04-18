@@ -6,7 +6,7 @@ while (x <=10) {
     x++
 };
 
-// gets to then and stops because when we add +1, it becomes false and the while statement ends there.
+// gets to ten and stops because when we add +1, it becomes false and the while statement ends there.
 
 /* Note that we have 3 elements, these are needed for the FOR:
 - a declarartion of a avriable (let x = 1)

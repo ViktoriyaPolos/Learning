@@ -8,7 +8,7 @@ let option = 0 // not necessary to define an initial value, can be left open as 
 do {
     option = x(-1, 10)
     console.log(`The chosen option is ${option}.`)
-} while (option != -1); // only statmeent that comes after the block is defined 
+} while (option != -1); // this is the only statemnt in JS that comes after the block is defined 
 
 console.log('The end :)')  
 
