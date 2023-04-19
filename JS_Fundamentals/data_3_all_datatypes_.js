@@ -252,6 +252,7 @@ console.log(prod3);
 
 console.log('--//--');
 
+
 // Json:
 const prod4 = '{ "name": "Polo Shirt", "price": 79.9}';
 console.log(prod4);
