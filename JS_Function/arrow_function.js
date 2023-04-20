@@ -48,6 +48,8 @@ function Person () {
 console.log(this === global); // this is not the same as global in the "general code"
 console.log(this === module.exports); // 
 
+
+console.log('----- General Function syntax -----')
 let compareWithThis = function(param) {
     console.log(this === param)
 };
@@ -55,8 +57,38 @@ compareWithThis(global); /* in the node tho for functions, this is the same as t
 (we've seen this before and indeed this === module.exports - see file: execution_browser_vs_node.js).
 This THIS, in a function is thus different from the "general one" - line 48)*/
 
+compareWithThis(this); // this param = this is the one that's === module.exports. The one in the fc is === global
+
 // The this of a function leaves the global scope when we use bind to connect it to an object. This way, it points to the object instead of the fc: 
+console.log('----- Objects & Functions -----')
 const obj = {}
 compareWithThis = compareWithThis.bind(obj)
 compareWithThis(global); 
 compareWithThis(obj); 
+compareWithThis(module.exports); 
+
+console.log('----- Arrow Function syntax -----')
+let compareWithThisArrow = param => console.log(this === param);
+compareWithThisArrow(global);
+compareWithThisArrow(module.exports);
+compareWithThisArrow(this);
+
+/* this arrow function is defined within a node module (each archieve represents a module) - so if we write the function in a archieve (as we did here), so the owner of 
+the THIS here is module.exports */ 
+
+// Using bind in a arrow function: 
+compareWithThisArrow = compareWithThisArrow.bind(obj)
+compareWithThisArrow(obj);
+compareWithThisArrow(module.exports);
+
+// here the arrow function "wins" and stands, maintaining it's this in the original scope, we can't change it to the obj's one as we did with the "normal function"
+
+
+/* GLOBAL VS MODULE.EXPORTS
+Module.exports has the scope of this specific archieve we're working on. Meaning, if I define a var of wathever, it will exist in this file only. On the other hand, if we
+define it in this Global, as the name suggests, it will be acessible for the whole Node.js scope.
+
+- Node.js - we installed this to able to run JS, it's not intrinsic to the computer.  little computer program that can run JavaScript code outside of a web browser. 
+It's like a magic box that can do lots of cool things with your code!
+- Module.exports: is like the instructions that tell other people how to use your toy. When you make a toy and want to share it with other people, you need 
+to explain how to use it, right? module.exports is like the way you tell other people how to use your toy. */

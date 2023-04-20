@@ -15,4 +15,6 @@ for(x in person) {
     console.log(`${x} = ${person[x]}`)
 }
 
-// there's better ways of doing this than using the for/in function that we'll see more ahead.
+/* there's better ways of doing this than using the for/in function that we'll see more ahead.
+The for/in loop is used to iterate over the properties of an object. It allows you to loop through all the enumerable properties of an object, including its 
+inherited properties. */
