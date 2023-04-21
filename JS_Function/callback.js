@@ -63,4 +63,10 @@ elements of an array in a loop) */
  /*getElementsByTagName: fc that allows to access elements by a tag (can return several elements). 
  The tag we selected was 'body'. The response of this fc is an array, so we then need to specify the indexed elemenent we want [0]. 
  90% of the time, the body only has 1 index so it's always the 0 one.
- - onceclick is a callback fc that will execute everytime we click the body (in this case) of the webpage */  
+ - onceclick is a callback fc that will execute everytime we click the body (in this case) of the webpage
+ - the function for the oneclick receieves as a param an event (e) - we can declare what this event is or not, depends on wether we want to declare it. In this case,
+ given we just declared the console.log we don't need to define the event. 
+ 
+ Pasting that on the browser console and enter - the callback id registered. Even if we clean the console, it will callback the event. Now if we refresh the 
+ page, nothing will happen because the callback fc wasn't registered (because we load the html again - wathever that means, hoope we'll see this in detail in the 
+ html section).*/
