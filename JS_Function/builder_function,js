@@ -2,4 +2,8 @@ function car(speed = 200, delta = 5) {
     // private attribute
     let currentSpeed = 0
 }
-// see rest tomorrow
+/* a
+b
+c
+d
+*/
