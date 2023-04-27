@@ -2,11 +2,3 @@ function car(speed = 200, delta = 5) {
     // private attribute
     let currentSpeed = 0
 }
-/* a
-b
-c
-d
-cdef
-cdgs
-
-*/
