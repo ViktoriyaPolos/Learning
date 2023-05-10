@@ -25,7 +25,7 @@ function car( maxSpeed = 200, delta = 5) { // '= x' is to set a default value fo
     }
 };
 
-const uno = new car // we're instancing the fc throught the operator 'new'.  The fc is like a mold and uno and ferrari are instances of that mold (lines 37&38)
+const uno = new car // we're instancing the fc throught the operator 'new'.  The fc is like a mold and uno and ferrari are instances of that mold (lines 37 & 38)
 uno.acelerate(); // not an error because acelarete is defined outside of the fc scope
 console.log(uno.acelerate()); // undefined cuz this fc doesn't return anything (see above the code of the fc.)
 console.log(uno.getCurrentSpeed());
