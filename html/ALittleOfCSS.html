@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little of CSS</title>
+    <link rel="stylesheet" href="ALittleOfCSS1.css"> <!--we can have the css in another file and then link it to the html one-->
+    <style>
+        h1 {
+            font-size: 50px;
+            background-color: beige;
+        }
+        .redBackground {                        
+            background-color:lightpink;
+        }
+        .bold {
+            font-weight: bold;
+        }
+       
+    </style>
+    <!--for headers and such, we use the actual 'name', for example h1, h2, etc
+        - for classes, we access them with '.' and then the name
+        - for id's, we access them by '#' and then the name-->
+</head>
+<body>
+    <h1>CSS</h1>
+    <span id="mainText">Text1</span><br> <!--To break the line, he said this is not the best way to do it tho-->
+    <span class="redBackground and bold">Text2</span><br>
+    <span class="redBackground">Text3</span>    
+</body>
+</html>
