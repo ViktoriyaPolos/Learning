@@ -9,7 +9,7 @@ while (x <=10) {
 // gets to ten and stops because when we add +1, it becomes false and the while statement ends there.
 
 /* Note that we have 3 elements, these are needed for the FOR:
-- a declarartion of a avriable (let x = 1)
+- a declarartion of a variable (let x = 1)
 - expression that dictates when we leave the repetition (x <=10)
 - an increment (x++) */
 
