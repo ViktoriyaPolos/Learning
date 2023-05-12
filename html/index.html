@@ -1,42 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vik</title>
+    <title>Exercises HTML</title>
 </head>
-
 <body>
-    <h1>example</h1>
-    <h2>example2</h2>
-    <h3>example3</h3>
-    <p>this is a paragraph</p>
-    <p>this is a paragraph</p>
-    <h4>example4</h4>
-    <h5>example5</h5>
-    <h6>example6</h6>
-    <span>this is a span</span>
-    <span>this is a span</span>
-    <div>
-        <button><span>click</span></button>
-    </div>
-    <img src="" alt="">
+    <header>
+        <h1>Exercises HTML</h1>
+    </header>
+    <nav>
+        <a href="exercises/test.html">00 - Test</a> |
+        <a href="exercises/temp.html">Temp</a>
+    </nav>
+    <section id="content"></section>
+    <footer>
+        <br>
+        Course of Modern Web
+    </footer>
+    <!--What we want to do here is to intercept the call that the browser does to the links, so we don't exit the current page to go to 
+    the "new" one. What we want to do, apparently, is an Ajax requet to get the info in the div/section with the id='content'.
+    - document.querySelectorAll('a') - with this we intercept all the links
+    - forEach - it's because we'll have several different links, not just one
+    - e - just the param of the function to which we then applied the (next line)
+    - .preventDefault - prevents the default action of happening, which in this case would be to open the link, exiting the current page
+    - now we want an Ajax call, to get the content of the linked page and through the content of it into the 'content' section.
+    - .getElementById (we can use this one or the querySelector. Given we have the id (content), we went with this one. Also, because we're
+    using this function we don't need to do #content (as we would need to usually do to access an id)).
+    - fetch(link.href) - fetch is a newer, useful function and I'ma leave it at that for now. The 'link' part we alredy 'declared', to get
+    all the 'a's in the page and 'href' I didn't get :) 
 
-<a href="https://google.com">go to goolgle</a>
-<div>
-    <a href="test.html">go to test</a>
-</div>
+    In sum, we want to have just one page and call into it data/info from other pages-->
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const content = document.getElementById('content')
 
+            link.onclick = function(e) {
+                e.preventDefault()
 
-
+                fetch(link.href)
+                    .then(resp => resp.text())
+                    .then(html => content.innerHTML = html)
+              }
+        })
+    </script>
 </body>
-
-<script>
-
-    console.log('Hi')
-
-</script>
-
 </html>
+
+
+
+<!--const PageExample = () => {
+    const [btnName, setBtnName] = useState("vik")
+
+    return (
+        <nav>
+            <button onClick={() => setBtnName("btn1") }>00 - Test</button>
+            <button onClick={() => setBtnName("btn2") }>Temp</button>
+
+            <Counter customMessage="The count is:" />
+            <Counter customMessage="The total products that you want to buy are:" />
+            <Button onclick="" color="green" size="small" >Text</Button>
+            <Button onclick="" color="blue" size="small" >Text</Button>
+            <Button onclick="" size="small" >Text</Button>
+            <Button size="small" >Text</Button>
+            <Button size="small" >Text</Button> 
+
+
+
+            {btnName === "btn1" ? <h1>Worked!</h1>  : null }
+            {btnName === "btn2" ? <h3>Temp doc</h3> : null }
+
+        </nav>
+    )
+}
+
+
+const Button = ({ color, size, onclick }) => {
+
+    const colors = {
+        green: "backgroundColor: green",
+        blue: "backgroundColor: blue"
+    }
+
+    return (
+            <button style={colors[color]} onClick={onclick}> Add 1 </button>    
+    )
+}
+
+
+const Counter = ({ customMessage }) => {
+    const [count, setCount] = useState(0)
+
+    const addOne = () => setCount(count + 1)
+    
+    return (
+        <nav>
+            <button onClick={addOne}> Add 1 </button>
+          
+            {customMessage} {count}
+
+        </nav>
+    )
+}
+-->
