@@ -1,17 +1,57 @@
 <!--
-<fieldset> 
+Options of 'sections' in body:
+<h1></h1>
+Header, goes from 1-6 and decreases in importance the higher you go. Can have headers inside another header.
+
+<ul></ul> & <ol></ol>
+Unordered and ordered lists. For the inputs, it's the same for both: <li>random list item</li> 
+
+<figure></figure>
+Allows to add an imagine (<img></img>) and a legend for the image (<figcaption></figcaption>)
+
+<fieldset></fieldset> 
 Is used to group related form elements together and create a visual separation from other parts of the form. It is typically used to group 
 form controls such as checkboxes, radio buttons, and input fields. A <legend> element can be used as the first child of the <fieldset> 
 element to provide a label or caption for the group.
 
-<section>
+<section></section>
 Is used to group related content together, regardless of whether it's form-related or not. It is used to divide content into distinct 
 sections, which can help with organization and readability. It is typically used to group together a set of related <article>, <header>, 
 and/or <footer> elements, for example.
 
-<label> 
+<label></label> 
 Is used in HTML to associate a textual label with a form control, such as a text input, a checkbox, or a radio button. The purpose of a 
 <label> element is to provide a description or caption for the form control, which can improve the usability and accessibility of the form.
 When a <label> element is clicked, it sets the focus to the associated form control, making it easier for users to interact with the form.
+
+<div></div>
+Generic container element that does not convey any semantic meaning. It is used for grouping together related content for styling or 
+scripting purposes, and is often used as a building block for creating layout structures on a webpage.
+
+<form action=""></form>
+1. Serves as a container for form controls such as input fields, checkboxes, radio buttons, dropdown menus, and buttons.
+2. The action attribute of the <form> element specifies the URL or server-side script that will handle the form data when it is submitted.
+3. The method attribute specifies how to send form-data to the URL specified in the action attribute. The form-data can be sent via a GET 
+request as URL parameters (with method="get") or via a POST request as data in the request body (with method="post").
+4. <input> elements are used to create input fields for text, password, email, number, date, and more. Each input field typically has a 
+name attribute to identify it when the form is submitted.
+    - can use 'required' to make the field mandatory
+    - pattern: used to define certain requirements, for example for passwords (pattern="[a-z0-5]{8,}" - means regular expression which 
+    matches 8 or more lowercase letters or the digits 0 to 5)
+    - if we name 2 inputs type=radio (name="x") the same thing it will allow only for one of them to be selected (makes them related)
+5. <label> element is used to associate a text label with an input field. It improves accessibility and usability by providing a 
+description or caption for the input.
+    - the inputs are included in the label elements
+    - so can be the 'select' elements. These allow for 'textarea' elements, which are like an input text but allow for several columns 
+    (cols) and rows (rows), making it a big empty box to write in.
+6. The <input> element with the type="submit" attribute or a <button> element with the type="submit" attribute is used to create a button 
+that submits the form data to the server.
+7. Handling Form Data: When the form is submitted, the browser sends the form data to the URL specified in the action attribute using the 
+HTTP method specified in the method attribute. The server-side script or endpoint defined in the action processes the data and may 
+generate a response.
+
+
+'Hacks'
+    - link labels to inputs in forms by using the same for's/id's
 
 -->

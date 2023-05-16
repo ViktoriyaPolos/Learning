@@ -1,0 +1,56 @@
+/*
+Selectors:
+- for 'main parts': just body {}; footer {}; img {}; a {}; etc
+- for links, we can have multiple options: a:visited {}; a:hover {}; a:active {}
+- for classes: we need to add an '.' before
+- we can select multiple ones by dividing with a comma ',' (example h1, h2 {})
+- also, we can have a class like 'market red' and target both individually: .market {}; .red {} (for example)
+
+Color Schemes: 
+    - rgb(x, y, z): takes 3 arguments for primary colors (red, green and blue) from 0-255. All 255's makes white and all 0's makes black.
+    - #xxyyzz: same as above, but instead of 0-255 it takes arguments from 0-F (0-9 and A-F). And it's 2 arguments per color instead of
+    1. Exampple for red: #FF0000 (if they're the same we can simplify and do #F00 - but it's always either 3 or 6 arguments). Sike, 
+    it can be 3, 6 or 8 (with the alpha channel ones).
+    - hsl (x, y%, z%): this one is a bit different. It takes a hue (color/shade, goes from 0-260, based on the color wheel. Red is 0,
+    green is 120 and blue is 240); saturation (intensity of the color and goes from 0-100%, 0% being gray and 100% pure color); lightness
+    (how bright a color appears, from 0%, or complete black, to 100%, complete white, with 50% being neutral). In the last 2, we really
+    need to add the % sign. 
+
+    - linear-gradient: applied to the background as it creates a image element and the background supports that. This fc takes at least 3 
+    arguments - gradientdirection (90deg for example); color1 (can be in either of the forms above); color2 (same as color1). Can also
+    add the % we want each color to represent by adding the wanted % right after the color (these are called color-stops).
+    We can remove the color-stops and the gradDirection if we're ok with the defaults to have a cleaner code.
+
+    - opacity (from 0-1 or 0%-100%). Can do the same with alpha channel: rgba - works the same as rgb but takes an extra argument for the
+    alpha channel (from 0-1)
+
+    - box-shadow: lets you apply one or more shadows around an element. Here is basic syntax: offsetX offsetY color, oofsetx/y moves the 
+    shadow to the left/right (x) or up/down (y) and takes values in px (can be positive or negative). If we want 0, don't need to add the 
+    unit (px in this case). Negative values are for up and left, positive ones for right and down. 
+    Additionally, we can define the blurRadius between the offseets and color (if we don't, it's 0 by default) and it defines the 
+    sharpness of the edges. 
+    AND we can define how far it is with spreadRadius (once again it's ' by default and comes after the blurRadius).
+
+Other configurations: 
+    - width
+    - height (unit for viewport is vh; can also use the 'normal' px)
+    - margin
+    - padding
+    - margin (left, right, top, bottom or just margin). Can prevent horizontal scroll in the 'body' element (margin: 0;)
+    - max-width
+    - text-align
+    - font-style
+    - font-size
+    - font-family
+    - color 
+    - background
+    - background-color
+    - background-image
+    - display
+    - border (left, right, width, color, style)
+
+Units: 
+    - rem: root em, and is relative to the font size of the html element.
+    - em:  represents the font size of the element on which it is applied. It is a relative unit of measurement that allows you to define
+    sizes based on the font size of the element itself.
+*/
