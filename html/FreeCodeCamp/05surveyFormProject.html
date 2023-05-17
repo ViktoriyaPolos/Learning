@@ -4,12 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Survey Form</title>
     <link rel="stylesheet" href="05surveyFormProject.css">
 </head>
 <body>
     <h1 id="title">freeCodeCamp Survey Form</h1>
     <p id="description">Thank you for taking the time to help us improve the platform</p>
-    <form action="" id="survey-form"></form>
+    <form action="https://register-demo.freecodecamp.org" id="survey-form">
+        <fieldset>
+            <label for="name-label">Name <input name="name" id="name-label" type="text" required placeholder="Enter your name"/></label>
+            <label for="email-label">Email <input name="email" id="email-label" type="email" required placeholder="Enter your email"/></label>
+            <label for="number-label">Age (optional) <input name="age" id="number-label" type="number" min="10" max="99" placeholder="Age"/></label>
+        </fieldset>
+        <fieldset>
+            <label for="dropdown">Which option best describes your current role?
+                <select name="dropdown" id="dropdown">
+                    <option value="">Select current role</option>
+                    <option value="1">Full time job</option>
+                    <option value="2">Part time job</option>
+                    <option value="3">Student</option>
+                    <option value="4">Unemployed</option>
+                    <option value="5">Prefer not to say</option>
+                    <option value="6">Other</option>
+                </select>
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="">Would you recommend freeCodeCamp to a friend?</label>
+            <label for="recommend"><input type="radio" name="recommend?"> Definitely</label>
+            <label for="maybe"><input type="radio" name="recommend?"> Maybe</label>
+            <label for="unsure"><input type="radio" name="recommend?"> Not sure</label>
+            <label for="wontRecommend"><input type="radio" name="recommend?"> No</label>
+        </fieldset>
+
+    </form>
 </body>
 </html>
