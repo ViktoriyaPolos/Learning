@@ -34,7 +34,6 @@ Color Schemes:
 Other configurations: 
     - width
     - height (unit for viewport is vh; can also use the 'normal' px)
-    - margin
     - padding
     - margin (left, right, top, bottom or just margin). Can prevent horizontal scroll in the 'body' element (margin: 0;)
     - max-width
@@ -50,7 +49,12 @@ Other configurations:
     - border (left, right, width, color, style)
 
 Units: 
-    - rem: root em, and is relative to the font size of the html element.
-    - em:  represents the font size of the element on which it is applied. It is a relative unit of measurement that allows you to define
-    sizes based on the font size of the element itself.
+    - rem: used for sizing relative to the font size of the root element (<html>), for scalable and consistent layouts  across the entire 
+    page (margins, paddings, and general layout elements). Use it for global sizing that should be consistent throughout the page.
+    - em: used for sizing relative to the font size of the parent or current element. Useful when you want an element's size to scale 
+    proportionally with its parent element or when creating scalable typography. Consider using em for elements like headings, text blocks, 
+    and UI components that should adapt to the font size of their container.
+    - px: better used for fixed and precise sizing, such as borders, shadows, and certain UI elements. Ideal for elements that need to 
+    maintain a specific size regardless of the user's preferred font size or zoom level. Not responsive or scalable with changes in font 
+    size or layout.
 */

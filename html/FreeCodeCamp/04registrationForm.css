@@ -20,13 +20,11 @@ form {
     max-width: 500px;
     min-width: 300px;
     width: 60vw;
+    padding-bottom: 2em;
 }
 fieldset {
     border: none;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 2rem 0; /*first value for top&bottom and second for left&right*/
     border-bottom: 3px solid #3b3b4f; 
 }
 fieldset:last-of-type {
@@ -34,16 +32,34 @@ fieldset:last-of-type {
 }
 
 input, textarea, select {
-    max-width: 500px;
-    min-width: 300px;
-    width: 60vw;
-    margin-top: 10px 0 0 0;
+    width: 100%;
+    margin: 10px 0 0 0;
+    min-height: 2em;
 }
 .inline {
-    width: unset;
-    margin-right: 0.5em;
-    margin-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    width: unset; /*undoes what we did before with the width= 100%; for the inputs*/ 
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
 }
-/*undoes what we did before with the widht= 100%; */  
+input, textarea {
+    background-color: #0a0a23;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+
+}
+input[type="submit"] {
+    display: block;
+    width: 60%;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #3b3b4f;
+    border-color: white;
+    min-width: 300px;
+    margin: 1em auto;
+}
+input[type="file"] {
+    padding: 1px 2px;
+}
+a {
+    color: #dfdfe2; 
+}
