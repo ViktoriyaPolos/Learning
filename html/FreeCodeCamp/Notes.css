@@ -47,6 +47,7 @@ Other configurations:
     - background-image
     - display
     - border (left, right, width, color, style)
+    - border-radius (in px and ir rounds the corners
 
 Units: 
     - rem: used for sizing relative to the font size of the root element (<html>), for scalable and consistent layouts  across the entire 
@@ -57,4 +58,6 @@ Units:
     - px: better used for fixed and precise sizing, such as borders, shadows, and certain UI elements. Ideal for elements that need to 
     maintain a specific size regardless of the user's preferred font size or zoom level. Not responsive or scalable with changes in font 
     size or layout.
+
+Hack: https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png - for the css box model (understanding padding, border, margin)
 */

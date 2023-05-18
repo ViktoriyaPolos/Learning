@@ -1,0 +1,42 @@
+body {
+    background-color:  #1b1b32;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+form {
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 300px;
+    width: 60vw;
+    padding-bottom: 2em;
+}
+h1, p {
+    text-align: center;
+}
+label {
+    display: block;
+}
+fieldset {
+    border: none; 
+    padding: auto;
+    margin: 0.5rem 0;
+    max-width: 500px;
+    min-width: 300px;
+}
+input[type="text"], input[type="email"], input[type="number"], textarea {
+    display: block;
+    width: 100%;
+}
+input[type="submit"] {
+    display: block;
+    margin: 1em auto;
+}
+textarea {
+    width: 100%;
+}
+input, textarea, select {
+    background-color: #0a0a23;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+    vertical-align: middle;
+}
