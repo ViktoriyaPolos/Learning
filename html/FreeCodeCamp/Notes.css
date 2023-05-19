@@ -47,7 +47,15 @@ Other configurations:
     - background-image
     - display
     - border (left, right, width, color, style)
-    - border-radius (in px and ir rounds the corners
+    - border-radius (in px and ir rounds the corners)
+    - object-fit
+    - Flexbox
+        - set by doing: 'display: flex'
+        - flex-direction
+        - flex-wrap
+    - justify-content
+    - align-items
+    - gap
 
 Units: 
     - rem: used for sizing relative to the font size of the root element (<html>), for scalable and consistent layouts  across the entire 
