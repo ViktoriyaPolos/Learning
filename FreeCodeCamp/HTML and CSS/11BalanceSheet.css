@@ -1,0 +1,79 @@
+html {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    color: #0a0a23;
+}
+span[class~="sr-only"] { /* Selects any span element whose class includes sr-only*/
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important; /* This property is used to define the visible portions of an element (1/2 to hide the text)*/
+    clip-path: inset(50%) !important;  /* This property determines the shape the property above (clip) should take (2/2 to hide the text)*/
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    position: absolute !important; /* 1/3 to remove the hiden text*/
+    padding: 0 !important; /* 2/3 to remove the hiden text*/
+    margin: -1px !important; /* 3/3 to remove the hiden text*/
+}
+/* !important keyword ensures these properties are always applied, regardless of order or specificity*/
+h1 {
+    max-width: 37.25rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+}
+h1 .flex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+}
+h1 .flex span:first-of-type {
+    font-size: 0.7em;
+}
+h1 .flex span:last-of-type {
+    font-size: 1.2em;
+}
+section {
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0d5; 
+}
+#years {
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    color: #fff;
+    background: #0a0a23;
+    margin: 0 -2px;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+}
+#years span[class] { /*The span[class] syntax will target any span element that has a class attribute set, regardless it's value.*/ 
+    font-weight: bold;
+    width: 4.5rem;
+    text-align: right;
+}
+.table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem;
+}
+span { 
+    font-weight: normal;
+}
+/* before we had a :not(.sr-only) to not change the previous rules on sr-only spans. But then we added the !important, so we could
+remove that part.*/ 
+table {
+    border-collapse: collapse; /*Allows cell borders to collapse into a single border, instead of a border around each cell.*/
+    border: 0;
+    width: 100%; /*Ensures the table fills the container.*/
+    position: relative;
+    margin-top: 3rem;
+}
+table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+}
+
+
