@@ -32,6 +32,16 @@ Color Schemes:
     sharpness of the edges. 
     AND we can define how far it is with spreadRadius (once again it's ' by default and comes after the blurRadius).
 
+Position:
+Typically, HTML is rendered in a top-down manner. Elements at the top of the code are positioned at the top of the page. However, many 
+times you may want to move the elements to different positions. You can do this with the position property.
+    - absolute: this position takes the element out of that top-down document flow and allows you to adjust it relative to its container.
+    When we have this position, the top/left/right/bottom are more flexible to move the items around.
+
+z-index
+Is used to create "layers" for your HTML elements. Elements with a higher z-index value will appear to be layered on top of elements with
+a lower z-index value. This can be combined with the positioning to create unique effects.
+
 Other configurations: 
     - width
     - height (unit for viewport is vh; can also use the 'normal' px)
@@ -72,5 +82,8 @@ Units:
     maintain a specific size regardless of the user's preferred font size or zoom level. Not responsive or scalable with changes in font 
     size or layout.
 
-Hack: https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png - for the css box model (understanding padding, border, margin)
+Little helps:
+- https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png - for the css box model (understanding padding, border, margin)
+- to center elements: margin: 0 auto;
+- 
 */
