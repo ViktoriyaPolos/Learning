@@ -7,6 +7,29 @@ Selectors:
 - also, we can have a class like 'market red' and target both individually: .market {}; .red {} (for example)
 - for id's we do it with # (like the . in classes)
 
+html{
+    box-sizing= to border-box;
+}
+Browsers can apply default margin and padding values to specific elements. To make sure your piano looks correct,
+you need to reset the box model and that's what this piece of code is for.
+   - *, *::before, *::after {
+        box-sizing: inherit;
+    }
+    - besides the html, we need to pass the property to the "children" elements (*) and to all the pseudo-elements 
+    we might add later (::before and ::after)
+
+content
+The content property is used to set or override the content of the element. By default, the pseudo-elements created
+by the ::before and ::after pseudo-selectors are empty, and the elements will not be rendered to the page. Setting 
+the content property to an empty string "" will ensure the element is rendered to the page while still being empty.
+
+@media () {}
+The @media at-rule, also known as a media query, is used to conditionally apply CSS. Media queries are commonly used
+ to apply CSS based on the viewport width using the max-width and min-width properties.
+
+overflow: hidden;
+Hides any elements that overflow when the size of the window gets too small.
+
 Color Schemes: 
     - rgb(x, y, z): takes 3 arguments for primary colors (red, green and blue) from 0-255. All 255's makes white and all 0's makes black.
     - #xxyyzz: same as above, but instead of 0-255 it takes arguments from 0-F (0-9 and A-F). And it's 2 arguments per color instead of
