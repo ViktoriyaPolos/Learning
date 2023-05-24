@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Documentation</title>
+    <link rel="stylesheet" href="14DocumentationProject.css">
+</head>
+<body>
+    <main id="main-doc">
+        <nav id="navbar">
+            <header id="navbarHeader">CSS Documentation</header>
+            <ul class="navbarList">
+                <li><a href="#Introduction">Introduction</a></li>
+                <li><a href="#SelectorSyntax">Selector Syntax</a></li>
+                <li><a href="#BoxModel">Box Model</a></li>
+                <li><a href="#Display&Positioning">Display and Positioning</a></li>
+                <li><a href="#Typography">Typography</a></li>
+                <li><a href="#Layout&Flexbox">Layout and Flexbox</a></li>
+                <li><a href="#ResponsiveDesign">Responsive Design</a></li>
+                <li><a href="#Transitions&Animations">Transitions and Animations</a></li>
+                <li><a href="#Selectors&Specificity">CSS Selectors and Specificity</a></li>
+                <li><a href="#Units">CSS Units</a></li>
+                <li><a href="#Preprocessors&Frameworks">CSS Preprocessors and Frameworks</a></li>
+                <li><a href="#Reference">Reference</a></li>
+            </ul>
+        </nav>
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <div>
+                <p>CSS (Cascading Style Sheets) is a fundamental technology used in web development to control the visual appearance of HTML elements on a webpage. It allows you to define how elements should be styled, positioned, and laid out on the screen, giving you the ability to create visually appealing and consistent designs.</p>
+                <p>CSS works by applying styles to HTML elements using selectors. Selectors target specific elements or groups of elements based on their element type, class, ID, attributes, or relationship to other elements. Once selected, you can define various properties and values to control aspects such as colors, typography, layout, borders, backgrounds, and animations.</p>
+            </div>
+        </section>
+        <section class="main-section" id="SelectorSyntax">
+            <header>Selector Syntax</header>
+            <div class="description">
+                <p>Selectors target specific elements or groups of elements based on their element type, class, ID, attributes, or relationship to other elements. For example, to select all 'p' elements, you can use the element selector: p. To select elements with a specific class, use the class selector: .highlight. To select an element with a particular ID, use the ID selector: #logo.</p>
+            </div>
+            <code>
+                /* Element Selector */
+                    p {
+                    color: blue;
+                    }
+
+                    /* Class Selector */
+                    .highlight {
+                    background-color: yellow;
+                    }
+
+                    /* ID Selector */
+                    #logo {
+                    width: 200px;
+                    }
+            </code>
+        </section>
+        <section class="main-section" id="BoxModel">
+            <header>Box Model</header>
+            <div class="description">
+                <p>The box model describes how elements are rendered on the screen. It includes the content area, padding, borders, and margins. You can control these aspects to create spacing and layout arrangements. For example, to create a box with a width of 200px, a height of 100px, and a 10px margin, you can use the following CSS:</p>
+            </div>
+            <code>
+                .box {
+                    width: 200px;
+                    height: 100px;
+                    margin: 10px;
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="Display&Positioning">
+            <header>Display and Positioning</header>
+            <div class="description">
+                <p>CSS provides properties to control the display and positioning of elements. For example, you can use display: flex to create flexible layouts where elements align horizontally or vertically. You can also use properties like position and float to control the positioning of elements on the page.</p>
+            </div>
+            <code>
+                .container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  }
+                  
+                  .absolute-positioned {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="Typography">
+            <header>Typography</header>
+            <div class="description">
+                <p>CSS allows you to control various aspects of typography, such as font families, sizes, weights, styles, and alignments. For example, to set the font size of a heading to 24 pixels and align it to the center, you can use the following CSS:</p>
+            </div>
+            <code>
+                .heading {
+                    font-size: 24px;
+                    text-align: center;
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="Layout&Flexbox">
+            <header>Layout and Flexbox</header>
+            <div class="description">
+                <p>Flexbox is a CSS layout model that provides a flexible way to arrange and align elements within a container. It offers properties like flex-direction, justify-content, and align-items to control the layout. For example, to create a vertically centered layout, you can use the following CSS:</p>
+            </div>
+            <code>
+                .container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="ResponsiveDesign">
+            <header>Responsive Design</header>
+            <div class="description">
+                <p>With media queries, you can apply different styles based on the characteristics of the user's device or viewport size. This enables you to create responsive designs that adapt to different screen sizes and orientations. For example, you can adjust the layout or font sizes for smaller screens using media queries.</p>
+            </div>
+            <code>
+                @media screen and (max-width: 768px) {
+                    .container {
+                      flex-direction: column;
+                    }
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="Transitions&Animations">
+            <header>Transitions and Animations</header>
+            <div class="description">
+                <p>CSS provides properties to create smooth transitions between different property values over time. You can also define keyframe animations to create more complex and interactive animations. For example, you can create a fade-in animation using @keyframes and apply it to an element using the animation property.</p>
+            </div>
+            <code>
+                .box {
+                    transition: background-color 0.3s ease-in-out;
+                  }
+                  
+                  .animated {
+                    animation: fade-in 1s ease-in-out infinite;
+                  }
+                  
+                  @keyframes fade-in {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="Selectors&Specificity">
+            <header>CSS Selectors and Specificity</header>
+            <div class="description">
+                <p>CSS selectors determine which elements the styles should be applied to. Understanding selector specificity is important to control the precedence of styles when multiple selectors target the same element. Specificity is based on the combination of element types, classes, and IDs used in the selector.</p>
+            </div>
+            <code>
+                /* Specificity Example */
+                .container p {
+                  color: red; /* More specific */
+                }
+                
+                p {
+                  color: blue;
+                }
+            </code>
+        </section>
+        <section class="main-section" id="Units">
+            <header>CSS Units</header>
+            <div class="description">
+                <p>CSS supports various units to specify sizes, such as pixels, percentages, ems, rems, and more. Choosing the appropriate unit depends on the context and desired effect. For example, you can specify widths using pixels or percentages, or use relative units like em or rem for scalable designs.</p>
+            </div>
+            <code>
+                .box {
+                    width: 300px;
+                    height: 50%;
+                    padding: 2rem;
+                    margin: 10px auto;
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="Preprocessors&Frameworks">
+            <header>CSS Preprocessors and Frameworks</header>
+            <div class="description">
+                <p>CSS preprocessors like Sass, Less, and Stylus provide advanced features and functionality, such as variables, nesting, mixins, and more. For Frameworks, like Bootstrap and Foundation, they offer pre-designed CSS components and layout systems to speed up developmen</p>
+            </div>
+            <code>
+                /* Sass Example */
+                $primary-color: #ff0000;
+                
+                .container {
+                  background-color: $primary-color;
+                }
+                
+                /* Bootstrap Example */
+                <div class="container">
+                  <h1>Hello, Bootstrap!</h1>
+                </div>
+            </code>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <p>All this information came from <a target="_blank" href="https://chat.openai.com/">ChatGPT</a></p>
+        </section>
+    </main>
+</body>
+</html>
