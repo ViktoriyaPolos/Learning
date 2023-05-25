@@ -12,18 +12,18 @@
         <nav id="navbar">
             <header id="navbarHeader">CSS Documentation</header>
             <ul class="navbarList">
-                <li><a href="#Introduction">Introduction</a></li>
-                <li><a href="#SelectorSyntax">Selector Syntax</a></li>
-                <li><a href="#BoxModel">Box Model</a></li>
-                <li><a href="#Display&Positioning">Display and Positioning</a></li>
-                <li><a href="#Typography">Typography</a></li>
-                <li><a href="#Layout&Flexbox">Layout and Flexbox</a></li>
-                <li><a href="#ResponsiveDesign">Responsive Design</a></li>
-                <li><a href="#Transitions&Animations">Transitions and Animations</a></li>
-                <li><a href="#Selectors&Specificity">CSS Selectors and Specificity</a></li>
-                <li><a href="#Units">CSS Units</a></li>
-                <li><a href="#Preprocessors&Frameworks">CSS Preprocessors and Frameworks</a></li>
-                <li><a href="#Reference">Reference</a></li>
+                <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+                <li><a class="nav-link" href="#Selector_Syntax">Selector Syntax</a></li>
+                <li><a class="nav-link" href="#Box_Model">Box Model</a></li>
+                <li><a class="nav-link" href="#Display_and_Positioning">Display and Positioning</a></li>
+                <li><a class="nav-link" href="#Typography">Typography</a></li>
+                <li><a class="nav-link" href="#Layout_and_Flexbox">Layout and Flexbox</a></li>
+                <li><a class="nav-link" href="#Responsive_Design">Responsive Design</a></li>
+                <li><a class="nav-link" href="#Transitions_and_Animations">Transitions and Animations</a></li>
+                <li><a class="nav-link" href="#CSS_Selectors_and_Specificity">CSS Selectors and Specificity</a></li>
+                <li><a class="nav-link" href="#CSS_Units">CSS Units</a></li>
+                <li><a class="nav-link" href="#CSS_Preprocessors_and_Frameworks">CSS Preprocessors and Frameworks</a></li>
+                <li><a class="nav-link" href="#Reference">Reference</a></li>
             </ul>
         </nav>
         <section class="main-section" id="Introduction">
@@ -33,7 +33,7 @@
                 <p>CSS works by applying styles to HTML elements using selectors. Selectors target specific elements or groups of elements based on their element type, class, ID, attributes, or relationship to other elements. Once selected, you can define various properties and values to control aspects such as colors, typography, layout, borders, backgrounds, and animations.</p>
             </div>
         </section>
-        <section class="main-section" id="SelectorSyntax">
+        <section class="main-section" id="Selector_Syntax">
             <header>Selector Syntax</header>
             <div class="description">
                 <p>Selectors target specific elements or groups of elements based on their element type, class, ID, attributes, or relationship to other elements. For example, to select all 'p' elements, you can use the element selector: p. To select elements with a specific class, use the class selector: .highlight. To select an element with a particular ID, use the ID selector: #logo.</p>
@@ -55,10 +55,15 @@
                     }
             </code>
         </section>
-        <section class="main-section" id="BoxModel">
+        <section class="main-section" id="Box_Model">
             <header>Box Model</header>
             <div class="description">
-                <p>The box model describes how elements are rendered on the screen. It includes the content area, padding, borders, and margins. You can control these aspects to create spacing and layout arrangements. For example, to create a box with a width of 200px, a height of 100px, and a 10px margin, you can use the following CSS:</p>
+                <p>The box model describes how elements are rendered on the screen. It includes:</p>
+                    <li class="main-li">content area</li>
+                    <li class="main-li">padding</li>
+                    <li class="main-li">borders</li>
+                    <li class="main-li">margins</li>    
+                <p>You can control these aspects to create spacing and layout arrangements. For example, to create a box with a width of 200px, a height of 100px, and a 10px margin, you can use the following CSS:</p> 
             </div>
             <code>
                 .box {
@@ -68,7 +73,7 @@
                   }
             </code>
         </section>
-        <section class="main-section" id="Display&Positioning">
+        <section class="main-section" id="Display_and_Positioning">
             <header>Display and Positioning</header>
             <div class="description">
                 <p>CSS provides properties to control the display and positioning of elements. For example, you can use display: flex to create flexible layouts where elements align horizontally or vertically. You can also use properties like position and float to control the positioning of elements on the page.</p>
@@ -100,7 +105,7 @@
                   }
             </code>
         </section>
-        <section class="main-section" id="Layout&Flexbox">
+        <section class="main-section" id="Layout_and_Flexbox">
             <header>Layout and Flexbox</header>
             <div class="description">
                 <p>Flexbox is a CSS layout model that provides a flexible way to arrange and align elements within a container. It offers properties like flex-direction, justify-content, and align-items to control the layout. For example, to create a vertically centered layout, you can use the following CSS:</p>
@@ -113,7 +118,7 @@
                   }
             </code>
         </section>
-        <section class="main-section" id="ResponsiveDesign">
+        <section class="main-section" id="Responsive_Design">
             <header>Responsive Design</header>
             <div class="description">
                 <p>With media queries, you can apply different styles based on the characteristics of the user's device or viewport size. This enables you to create responsive designs that adapt to different screen sizes and orientations. For example, you can adjust the layout or font sizes for smaller screens using media queries.</p>
@@ -126,7 +131,7 @@
                   }
             </code>
         </section>
-        <section class="main-section" id="Transitions&Animations">
+        <section class="main-section" id="Transitions_and_Animations">
             <header>Transitions and Animations</header>
             <div class="description">
                 <p>CSS provides properties to create smooth transitions between different property values over time. You can also define keyframe animations to create more complex and interactive animations. For example, you can create a fade-in animation using @keyframes and apply it to an element using the animation property.</p>
@@ -146,7 +151,7 @@
                   }
             </code>
         </section>
-        <section class="main-section" id="Selectors&Specificity">
+        <section class="main-section" id="CSS_Selectors_and_Specificity">
             <header>CSS Selectors and Specificity</header>
             <div class="description">
                 <p>CSS selectors determine which elements the styles should be applied to. Understanding selector specificity is important to control the precedence of styles when multiple selectors target the same element. Specificity is based on the combination of element types, classes, and IDs used in the selector.</p>
@@ -162,10 +167,16 @@
                 }
             </code>
         </section>
-        <section class="main-section" id="Units">
+        <section class="main-section" id="CSS_Units">
             <header>CSS Units</header>
             <div class="description">
-                <p>CSS supports various units to specify sizes, such as pixels, percentages, ems, rems, and more. Choosing the appropriate unit depends on the context and desired effect. For example, you can specify widths using pixels or percentages, or use relative units like em or rem for scalable designs.</p>
+                <p>CSS supports various units to specify sizes, such as:</p>
+                    <li class="main-li">pixels</li> 
+                    <li class="main-li">percentages</li> 
+                    <li class="main-li">ems</li> 
+                    <li class="main-li">rems</li> 
+                    <li class="main-li">other</li>
+            <p>Choosing the appropriate unit depends on the context and desired effect. For example, you can specify widths using pixels or percentages, or use relative units like em or rem for scalable designs</p>
             </div>
             <code>
                 .box {
@@ -176,7 +187,7 @@
                   }
             </code>
         </section>
-        <section class="main-section" id="Preprocessors&Frameworks">
+        <section class="main-section" id="CSS_Preprocessors_and_Frameworks">
             <header>CSS Preprocessors and Frameworks</header>
             <div class="description">
                 <p>CSS preprocessors like Sass, Less, and Stylus provide advanced features and functionality, such as variables, nesting, mixins, and more. For Frameworks, like Bootstrap and Foundation, they offer pre-designed CSS components and layout systems to speed up developmen</p>
