@@ -61,6 +61,10 @@ times you may want to move the elements to different positions. You can do this 
     - absolute: this position takes the element out of that top-down document flow and allows you to adjust it relative to its container.
     When we have this position, the top/left/right/bottom are more flexible to move the items around.
 
+:root
+If we declare var's in another section, even if it's a parent, those will not be usable in the whole doc, so we should declare them in a 
+root, as this is the highest level selector in CSS; putting your variables there will make them usable everywhere.
+
 z-index
 Is used to create "layers" for your HTML elements. Elements with a higher z-index value will appear to be layered on top of elements with
 a lower z-index value. This can be combined with the positioning to create unique effects.
@@ -94,6 +98,8 @@ Other configurations:
     - :last-of-type
     - ::before
     - ::after
+    - --variable-name (ex. --building-color (from CitySkyline))
+        - to use it: ex: background-color: var(--variable-name)
 
 Units: 
     - rem: used for sizing relative to the font size of the root element (<html>), for scalable and consistent layouts  across the entire 
@@ -108,5 +114,12 @@ Units:
 Little helps:
 - https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png - for the css box model (understanding padding, border, margin)
 - to center elements: margin: 0 auto;
-- 
+- the elements have a default margin, so might want to remove it (margin: 0;).
+- To fill the whole page, do 100vh (for height for example: height: 100vh) - vh meaning that we are targeting to the viewport 
+- every element is set within it's 'parent'. Meaning: 
+        <body>
+            <div class="background-buildings"></div>
+        </body>
+    If we set .background-buildings to width: 100%; for example, it's 100% of the parent, so the body.
+- to center stuff, turn the parent into a flexbox (display: flex;) and then use the properties of 'flex-direction' and 'align-items'
 */
