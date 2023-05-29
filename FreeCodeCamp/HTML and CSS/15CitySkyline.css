@@ -1,12 +1,17 @@
+/*Some main notes at the end (not all, some spread through the code)*/
 :root {
     --building-color1: #aa80ff;
     --building-color2: #66cc99;
     --building-color3: #cc6699;
     --building-color4: #538cc6;
-    --window-color1: black;
+    --window-color1: #bb99ff;
+    --window-color2: #8cd9b3;
+    --window-color3: #d98cb3;
+    --window-color4: #8cb3d9;
 }
+/*this is usefull so we can in one go change a particular property in a doc, without needing to go one element at a time.*/
 * {
-    border: 1px solid black;
+    /*border: 1px solid black; - after all the buildings are done, we've removed this. It was like an outline on every building and the corresponding sections within*/
     box-sizing: border-box;
 }
 body {
@@ -23,16 +28,42 @@ body {
     align-items: flex-end;
     justify-content: space-evenly; /*these last 3 lines were to evenly space the bb1 to bb4, by adjusting the parent and not the children. Same as we did for the background-buildings.*/
 }
- /*we did this to optimize the code, before we had them separate*/
+.sky { /*one of the last elements to be added but in terms of code layout makes sense here*/
+    background: radial-gradient(
+        circle closest-corner at 15% 15%, /*this moves the gradient to start 15% from the top and left, maintaining a circle shape*/
+        #ffcf33 0%,
+        #ffcf33 20%,
+        #ffff66 21%, 
+        #bbeeff 100%
+    );
+} 
+
+
+ /*WRAPS - we did this to optimize the code, before we had them separate*/
+ /*We want some building to share the same properties and to save some coding and avoid duplicating it, we can adjust and clean up and centralize here. To have this be applied, we then added this class to the buildings we wanted to apply this to*/
+ .building-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ /*This is the same as above but for the windows (bb4c for example needs these for us to be able to view the windows and not have them all to the left)*/
+ .window-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+ }
+
 
 
  /*BACKGROUND BUILDINGS - "bb" stands for "background building"*/
  .bb1 {
     width: 10%;
     height: 70%;
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     align-items: center;
+    we moved these properties to .building-wrap to be able to apply to more building without the need to duplicate the code*/
 }
 .bb1a {
     width: 70%;
@@ -51,58 +82,6 @@ body {
         var(--window-color1)
     );
 }
-.bb2 {
-    width: 10%;
-    height: 50%;
-    background-color: var(--building-color2); /* this didn't work in the begginig because we were defining the var in bb1, instead of the root*/
-}
-.bb3 {
-    width: 10%;
-    height: 55%;
-    background-color: var(--building-color3);
-}
-.bb4 {
-    width: 11%;
-    height: 58%;
-    background-color: var(--building-color4);
-}
-
-
-/*FOREGROUND BUILDINGS - "fb" stands for "foreground building"*/
-.fb1 {
-    width: 10%;
-    height: 60%;
-    background-color: var(--building-color4);
-}
-.fb2 {
-    width: 10%;
-    height: 40%;
-    background-color: var(--building-color3);
-}
-.fb3 {
-    width: 10%;
-    height: 35%;
-    background-color: var(--building-color1);
-}
-.fb4 {
-    width: 8%;
-    height: 45%;
-    background-color: var(--building-color1);
-    position: relative;
-    left: 10%;
-}
-.fb5 {
-    width: 10%;
-    height: 33%;
-    background-color: var(--building-color2);
-    position: relative;
-    right: 10%;
-}
-.fb6 {
-    width: 9%;
-    height: 38%;
-    background-color: var(--building-color3);
-}
 .bb1-window {
     height: 10%;
     background: linear-gradient(
@@ -110,10 +89,247 @@ body {
         var(--window-color1)
         );   
 }
+
+.bb2 {
+    width: 10%;
+    height: 50%;
+}
 .bb2b {
     width: 100%;
     height: 100%;
+    background: repeating-linear-gradient( /*this saves us the time of having to repeat the 'series' a bunch of times and does it auto until the end of the element*/
+        var(--building-color2) 0%, /*This creates 'stripes' by having set % of each color*/
+        var(--building-color2) 6%,
+        var(--window-color2) 6%,
+        var(--window-color2) 9%
+        );   
 }
-body {
-    
+.bb2a {
+    /*margin: auto;*/
+    /*width: 5vw;*/
+    /*height: 5vw;*/
+    /*border-top: 1vw solid #000;*/
+    /*border-bottom: 1vw solid #000; Changed to be belolw at the end*/
+    border-bottom: 5vh solid var(--building-color2);
+    /*border-left: 5vw solid #999;*/
+    border-left: 5vw solid transparent;
+    /*border-right: 5vw solid #999;*/
+    border-right: 5vw solid transparent;
 }
+/*These were part of the process of making the triangle on top of the building, we then removed them*/
+
+.bb3 {
+    width: 10%;
+    height: 55%;
+    background: repeating-linear-gradient(
+        90deg, /*All the gradients go from top to bottom by default. We can specify another direction by adding this before*/
+        var(--building-color3),
+        var(--building-color3),
+        var(--window-color3) 15%
+    );
+}
+.bb4 {
+    width: 11%;
+    height: 58%;
+}
+.bb4a {
+    width: 3%;
+    height: 10%;
+    background-color: var(--building-color4);
+}
+.bb4b {
+    width: 80%;
+    height: 5%;
+    background-color: var(--building-color4);
+}
+.bb4c {
+    width: 100%;
+    height: 85%;
+    background-color: var(--building-color4);
+}
+.bb4-window {
+    width: 18%;
+    height: 90%;
+    background-color: var(--window-color4);
+}
+
+
+
+
+/*FOREGROUND BUILDINGS - "fb" stands for "foreground building"*/
+.fb1 {
+    width: 10%;
+    height: 60%;
+    /*background-color: var(--building-color4);*/
+    /*as we add the details/other sections for the buildings, we remove/move some properties applied to the general one to apply to the smaller sections*/
+}
+.fb1a {
+    border-bottom: 7vh solid var(--building-color4); /*this defines the height of the section*/
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    /*When you increase the size of the left and right borders, the border on the bottom will expand to be the width of the combined left and right border widths, so this makes the border on the bottom 4vw wide.*/
+}
+.fb1b {
+    width: 60%;
+    height: 10%;
+    background-color: var(--building-color4);
+}
+.fb1c {
+    width: 100%;
+    height: 80%;
+    background: repeating-linear-gradient(
+        90deg, 
+        var(--building-color4) 0%, 
+        var(--building-color4) 10%,
+        transparent 10%, 
+        transparent 15% 
+    ), 
+    repeating-linear-gradient(
+        var(--building-color4) 0%, 
+        var(--building-color4) 10%,
+        var(--window-color4) 10%,  
+        var(--window-color4) 90%  
+    );
+}
+
+
+.fb2 {
+    width: 10%;
+    height: 40%;
+}
+.fb2a {
+    width: 100%;
+    border-bottom: 10vh solid var(--building-color3);
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+}
+.fb2b {
+    width: 100%;
+    height: 75%;
+    background-color: var(--building-color3);
+}
+.fb2-window {
+    width: 22%;
+    height: 100%;
+    background-color: var(--window-color3);
+}
+
+
+.fb3 {
+    width: 10%;
+    height: 35%;
+    /*background-color: var(--building-color1); - moved to the sections below*/
+}
+.fb3a {
+    width: 80%;
+    height: 15%;
+    background-color: var(--building-color1);
+}
+.fb3b {
+    width: 100%;
+    height: 35%;
+    background-color: var(--building-color1);
+}
+.fb3-window {
+    width: 25%;
+    height: 80%;
+    background-color: var(--window-color1);
+}
+
+.fb4 {
+    width: 8%;
+    height: 45%;
+    /*background-color: var(--building-color1); - moved to fb4b*/
+    position: relative;
+    left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-evenly;
+}
+.fb4b {
+    width: 100%;
+    height: 89%;
+    background-color: var(--building-color1);
+}
+.fb4-window {
+    width: 30%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: var(--window-color1);
+    margin: 10%;
+}
+.fb4a {
+    border-top: 5vh solid transparent;
+    border-left: 8vw solid var(--building-color1);
+}
+
+.fb5 {
+    width: 10%;
+    height: 33%;
+    /*background-color: var(--building-color2); - we can remove this (have the background settings below now), the cleaner the code the better :) */
+    position: relative;
+    right: 10%;
+    background: repeating-linear-gradient(
+        var(--building-color2) 0%,
+        var(--building-color2) 5%,
+        transparent 5%,
+        transparent 10%
+    ),
+    repeating-linear-gradient(
+        90deg,
+        var(--building-color2) 0%,
+        var(--building-color2) 12%,
+        var(--window-color2) 12%,
+        var(--window-color2) 44%
+    ); /*this created windows*/
+}
+
+/*for fb4 and fb5, we sort of flipped the order of them when we did --> position: relative*/
+
+.fb6 {
+    width: 9%;
+    height: 38%;
+    /*background-color: var(--building-color3); - another one that's no longer needed. PS: I didn't add comments on all the ones I removed, some I just straigh deleted.*/
+    background: repeating-linear-gradient(
+        90deg, 
+        var(--building-color3) 0%,
+        var(--building-color3) 10%,
+        transparent 10%, 
+        transparent 30% 
+    ),
+    repeating-linear-gradient(
+        var(--building-color3) 0%,
+        var(--building-color3) 10%,
+        var(--window-color3) 10%, 
+        var(--window-color3) 30% 
+    );
+}
+
+
+@media (max-width: 1000px) {
+    :root {
+        --building-color1: #000;
+        --building-color2: #000;
+        --building-color3: #000;
+        --building-color4: #000;
+        --window-color1: #777;
+        --window-color2: #777;
+        --window-color3: #777;
+        --window-color4: #777;
+    }
+    .sky { 
+        background: radial-gradient(
+            circle closest-corner at 15% 15%, 
+            #ccc 0%,
+            #ccc 20%,
+            #445 21%, 
+            #223 100%
+        );
+    } 
+}
+/*A media query can be used to change styles based on certain conditions. What we're doing here is changing the colors to have a day and night version (same code as the .sky in the begginging of the doc but dif. colors - same for the buildings and windows.)
+The condition here is the size, so when we change it, the colors should change as well. */
+
+
+
+/* What we did here was first set the general structure, having all the buildings, with a general solid color. Then, as we add more detailed, we've been optimizing the code by removing/moving some of the properties. For example, the background color on most of the buildings (.bb1/.fb1 for ex)*/

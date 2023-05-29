@@ -90,7 +90,7 @@ Other configurations:
     - Flexbox
         - set by doing: 'display: flex'
         - flex-direction
-        - flex-wrap
+        - flex-wrap - this makes the items in the parent element fit inside it, not 'overflowing'
         - justify-content
     - align-items
     - gap
