@@ -92,6 +92,10 @@ Other configurations:
         - flex-direction
         - flex-wrap - this makes the items in the parent element fit inside it, not 'overflowing'
         - justify-content
+    - Grid (Magazine)
+        - like flexbox (it's a display) and also allows to have special properties for both the parent&child elements
+        - grid-template-columns (takes x arguments being x the number of columns, defined by their width)
+        - minmax (2 arguments, min and max values (applied for example on the columns of the above function)
     - align-items
     - gap
     - :first-of-type
