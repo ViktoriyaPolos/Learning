@@ -3,20 +3,25 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
     font-size: 62.5%; /*This sets the default font size for your web page to 10px (the browser default is 16px). This will make it easier to work with rem units later, as 2rem would be 20px.*/
 }
+
 body {
-    font-family: Baskervville, serif;
+    font-family: 'Baskervville', serif;
     color: linen; 
     background-color: rgb(20, 30, 40);
 }
+
 h1 {
-    font-family: Anton, sans-serif;
+    font-family: 'Anton', sans-serif;
 }
+
 h2, h3, h4, h5, h6 {
-    font-family: Raleway, sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
+
 a {
     text-decoration: none;
     color: linen;
@@ -27,6 +32,57 @@ CSS Grid offers a two-dimensional grid-based layout, allowing to center items ho
 main { 
     display: grid;  /*this sets the main as the parent element*/
     grid-template-columns: minmax(2rem, 1fr) minmax(min-content,94rem) minmax(2rem,1fr); /*This creates 3 columns where the middle column is 94rem wide, and the first and last columns are both 1 fraction of the remaining space in the grid container.*/
-    
+    row-gap: 3rem;
 }
-/**/
+
+.heading {
+    display: grid;
+    grid-column: 2/3; /*This will tell the .heading element to start at grid line 2 and end at grid line 3.*/
+    grid-template-columns: repeat(2, 1fr); /*repeat() is used to repeat a value, rather than writing it out manually, and is helpful for grid layouts. For example, setting the grid-template-columns property to repeat(20, 200px) would create 20 columns each 200px wide.*/
+    row-gap: 1.5rem;
+}
+
+.text {
+    grid-column: 2/3;
+}
+
+.hero {
+    grid-column: 1/-1; /*when we don't know the number of columns and want it to go to the last one, use -1*/
+    position: relative;
+}
+
+img {
+    width: 100%;
+    object-fit: cover; /*tells the browser how to position the element within its container. In this case, cover will set the image to fill the container, cropping as needed to avoid changing the aspect ratio.*/
+}
+
+.hero-title {
+    text-align: center;
+    color: orangered;
+    font-size: 8rem;
+}
+
+.hero-subtitle {
+    text-align: center;
+    color: orangered;
+    font-size: 2.4rem;
+}
+
+.author {
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.author-name a:hover {
+    background-color: #306203;
+}
+
+.publish-date {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icons {
+    display: grid;
+    font-size: 3rem;
+    grid-template-columns: repeat(5, 1fr); /*The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. So we can set grid-template-columns property to repeat(5, 1fr) to arrange the icons in a single row.*/
+}

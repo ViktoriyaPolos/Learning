@@ -96,6 +96,16 @@ Other configurations:
         - like flexbox (it's a display) and also allows to have special properties for both the parent&child elements
         - grid-template-columns (takes x arguments being x the number of columns, defined by their width)
         - minmax (2 arguments, min and max values (applied for example on the columns of the above function)
+        - grid-column - is shorthand for grid-column-start and grid-column-end. The grid-column property tells the grid
+         item which grid line to start and end at.
+         - The repeat() function is used to repeat a value, rather than writing it out manually, and is helpful for grid
+          layouts. For example, setting the grid-template-columns property to repeat(20, 200px) would create 20 columns 
+          each 200px wide.
+          - row-gap
+          - grid-column: x/y - selects the columns to which the content will span. When we don't know the number of columns
+           and want it to go to the last one, use -1 for y. 
+           - The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. To avoid this, we can 
+           use grid-template-columns property set to repeat(5, 1fr) (for example) to arrange the icons in a single row.
     - align-items
     - gap
     - :first-of-type
@@ -104,6 +114,7 @@ Other configurations:
     - ::after
     - --variable-name (ex. --building-color (from CitySkyline))
         - to use it: ex: background-color: var(--variable-name)
+    - object-fit: x; (x = cover for example) -  tells the browser how to position the element within its container. In this case, cover will set the image to fill the container, cropping as needed to avoid changing the aspect ratio.
 
 Units: 
     - rem: used for sizing relative to the font size of the root element (<html>), for scalable and consistent layouts  across the entire 
