@@ -106,6 +106,11 @@ Other configurations:
            and want it to go to the last one, use -1 for y. 
            - The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. To avoid this, we can 
            use grid-template-columns property set to repeat(5, 1fr) (for example) to arrange the icons in a single row.
+           - grid-auto-flow: instead of adjusting the grid-template-colums property if we wanted to add more icons, we can use
+           this property. It takes either row or columns as a value (grid-auto-flow: row (for ex)), with an optional second value
+            of dense. Setting it to column will tell the algorithm to create new columns for content as needed. The dense value 
+            allows the algorithm to backtrack and fill holes in the grid with smaller items, which can result in items appearing
+             out of order.
     - align-items
     - gap
     - :first-of-type
