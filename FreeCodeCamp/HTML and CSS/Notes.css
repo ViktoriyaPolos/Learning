@@ -111,6 +111,7 @@ Other configurations:
             of dense. Setting it to column will tell the algorithm to create new columns for content as needed. The dense value 
             allows the algorithm to backtrack and fill holes in the grid with smaller items, which can result in items appearing
              out of order.
+           - grid-auto-columns: x; the above adds columns at the pre-set width, to overide it, we can use this property
     - align-items
     - gap
     - :first-of-type
