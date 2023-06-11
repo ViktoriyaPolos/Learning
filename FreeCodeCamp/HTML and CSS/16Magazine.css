@@ -44,6 +44,10 @@ main {
 
 .text {
     grid-column: 2/3;
+    font-size: 1.8rem;
+    letter-spacing: 0.6px;
+    column-width: 25rem;
+    text-align: justify; /*for pinting this is the setting usually used, in order to structure the layout and control the flow of the content. However, it can be a problem for accessibility, specially for people with dyslexia*/
 }
 
 .hero {
@@ -87,4 +91,59 @@ img {
     grid-template-columns: repeat(5, 1fr); /*The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. So we can set grid-template-columns property to repeat(5, 1fr) to arrange the icons in a single row.*/
     grid-auto-flow: column; /*If we want to add more social icons, but keep them on the same row, you'd need to update grid-template-columns to create additional columns. As an alternative, we can use this property. See more in the css notes*/
     grid-auto-columns: 1fr; /*the above adds columns at the pre-set width, to overide it, we can use this property*/ 
+    align-items: center;
+}
+
+.first-paragraph::first-letter {
+    font-size: 6rem;
+    color: orangered;
+    float: left; 
+    margin-right: 1rem; /*this and the prev lines are to shift the S into place, as the text was moved*/
+}
+
+hr { /*these are the lines*/
+    margin: 1.5rem 0; /*sets the distance from the content/text to the lines*/
+    border: 1px solid rgba(120, 120, 120, 0.6); /*colors the lines*/
+}
+
+.quote {
+    color: #00beef;
+    font-size: 2.4rem;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.quote::before {
+    content: '" ';
+}
+
+.quote::after {
+    content: ' "';
+}
+
+.text-with-images {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    column-gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.lists {
+    list-style-type: none; /*removes the bullet points from the list items*/
+    margin-top: 2rem;
+}
+
+.lists li {
+    margin-bottom: 1.5rem;
+}
+
+.list-title, .list-subtitle {
+    color: #00beef;
+}
+
+.image-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /*creates 2 columns, with fixed width based on the container*/
+    grid-template-rows: repeat(3, min-content); /*creates 3 rows, that adjust height based on content*/
+    gap: 2rem; /*distance between the grid elements*/
 }

@@ -92,35 +92,42 @@ Other configurations:
         - flex-direction
         - flex-wrap - this makes the items in the parent element fit inside it, not 'overflowing'
         - justify-content
+        - align-items
     - Grid (Magazine)
         - like flexbox (it's a display) and also allows to have special properties for both the parent&child elements
         - grid-template-columns (takes x arguments being x the number of columns, defined by their width)
         - minmax (2 arguments, min and max values (applied for example on the columns of the above function)
         - grid-column - is shorthand for grid-column-start and grid-column-end. The grid-column property tells the grid
          item which grid line to start and end at.
-         - The repeat() function is used to repeat a value, rather than writing it out manually, and is helpful for grid
+        - The repeat() function is used to repeat a value, rather than writing it out manually, and is helpful for grid
           layouts. For example, setting the grid-template-columns property to repeat(20, 200px) would create 20 columns 
           each 200px wide.
-          - row-gap
-          - grid-column: x/y - selects the columns to which the content will span. When we don't know the number of columns
+        - gap: can be divided into row-gap and column-gap (in that order) if given 2 values. If given only 1, will assume
+        that value for both column and row. 
+        - grid-column: x/y - selects the columns to which the content will span. When we don't know the number of columns
            and want it to go to the last one, use -1 for y. 
-           - The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. To avoid this, we can 
+        - The default settings for CSS Grid will create additional rows as needed, unlike Flexbox. To avoid this, we can 
            use grid-template-columns property set to repeat(5, 1fr) (for example) to arrange the icons in a single row.
-           - grid-auto-flow: instead of adjusting the grid-template-colums property if we wanted to add more icons, we can use
-           this property. It takes either row or columns as a value (grid-auto-flow: row (for ex)), with an optional second value
+        - grid-auto-flow: instead of adjusting the grid-template-colums property if we wanted to add more icons, we can use
+            this property. It takes either row or columns as a value (grid-auto-flow: row (for ex)), with an optional second value
             of dense. Setting it to column will tell the algorithm to create new columns for content as needed. The dense value 
             allows the algorithm to backtrack and fill holes in the grid with smaller items, which can result in items appearing
-             out of order.
-           - grid-auto-columns: x; the above adds columns at the pre-set width, to overide it, we can use this property
+            out of order.
+        - grid-auto-columns: x; the above adds columns at the pre-set width, to overide it, we can use this property
+        - align-items (aligns child elements along the column axis) & justify-items (aligns child elements within the row axis).
     - align-items
     - gap
     - :first-of-type
     - :last-of-type
     - ::before
     - ::after
+    - ::first-letter (allows you to target the first letter in the text content of an element)
     - --variable-name (ex. --building-color (from CitySkyline))
         - to use it: ex: background-color: var(--variable-name)
     - object-fit: x; (x = cover for example) -  tells the browser how to position the element within its container. In this case, cover will set the image to fill the container, cropping as needed to avoid changing the aspect ratio.
+    - letter-spacing
+    - column-width: we can create columns without a grid by using this property
+    - float: right/left/ (floats, aka moves, the content to the selected side of it's container)
 
 Units: 
     - rem: used for sizing relative to the font size of the root element (<html>), for scalable and consistent layouts  across the entire 
