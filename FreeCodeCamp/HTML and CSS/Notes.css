@@ -115,6 +115,7 @@ Other configurations:
             out of order.
         - grid-auto-columns: x; the above adds columns at the pre-set width, to overide it, we can use this property
         - align-items (aligns child elements along the column axis) & justify-items (aligns child elements within the row axis).
+        - place-items: can be used for both align-items & justify-items at the same time
     - align-items
     - gap
     - :first-of-type

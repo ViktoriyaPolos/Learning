@@ -146,4 +146,9 @@ hr { /*these are the lines*/
     grid-template-columns: 2fr 1fr; /*creates 2 columns, with fixed width based on the container*/
     grid-template-rows: repeat(3, min-content); /*creates 3 rows, that adjust height based on content*/
     gap: 2rem; /*distance between the grid elements*/
+    place-items: center;
+}
+
+.image-1, .image-3 {
+    grid-column: 1 / -1;
 }
