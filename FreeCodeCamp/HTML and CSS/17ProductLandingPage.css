@@ -1,0 +1,35 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    height: 100px;
+    background-color: #000013;
+    padding-right: 10px;
+}
+
+h1 {
+    color: #a57f32;
+}
+
+a {
+    font-size: large;
+    color: #694f2f;
+    text-decoration: none;
+}
+
+.blank {
+    color: #000013;
+}
+
+.form {
+    display: flex;
+    padding-top: 5rem;
+}
