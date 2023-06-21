@@ -47,10 +47,17 @@ a {
 }
 
 #about, #process {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    width: 80%;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 20px;
+    letter-spacing: 0.8px;
+}
+
+#pricing {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
 }
